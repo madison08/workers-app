@@ -1,15 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:workers/ColorManager.dart';
 import 'package:workers/widgets/Mytextfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Connexion",
+                    "Inscription",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -79,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                           horizontal: 15.0,
                         ),
                         child: Text(
-                          "Salut, connectez-vous pour continuer !",
+                          "Creer un compte !",
                           style: TextStyle(
                             color: ColorManager.greyColor,
                             // fontSize:
@@ -88,6 +86,27 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizedBox(
                         height: 22.0,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Text(
+                          "Nom complet",
+                          style: TextStyle(
+                            color: ColorManager.greyColor,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 15.0),
+                        child: MyTextField(
+                          hintText: "Entrer votre nom complet",
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.0,
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 15.0),
@@ -131,18 +150,6 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         height: 25.0,
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 15.0,
-                        ),
-                        child: Text(
-                          "Mot de passe oubler ?",
-                          style: TextStyle(
-                            color: ColorManager.primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                       SizedBox(
                         height: 24.0,
                       ),
@@ -165,7 +172,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             onPressed: null,
                             child: Text(
-                              "Connexion",
+                              "S'inscrire",
                               style: TextStyle(
                                 fontSize: 16.0,
                               ),
@@ -182,13 +189,13 @@ class LoginScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Vous n'avez pas de compte?"),
+                        Text("Vous avez un compte?"),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signup');
+                            Navigator.pushNamed(context, '/');
                           },
                           child: Text(
-                            "Inscrivez-vous",
+                            "Connectez-vous",
                             style: TextStyle(
                               color: ColorManager.violetColor,
                             ),
